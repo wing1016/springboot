@@ -1,0 +1,3 @@
+# default server port is 8080   > cannot do port:8080 , need space
+server:
+  port: 8081
