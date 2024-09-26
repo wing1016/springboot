@@ -14,7 +14,7 @@ public class Database {
     return strings[index];
   }
 
-  //sir
+  
   public static int size(){
     return strings.length;
   } 

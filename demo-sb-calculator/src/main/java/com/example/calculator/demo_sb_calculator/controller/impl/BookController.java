@@ -2,6 +2,7 @@ package com.example.calculator.demo_sb_calculator.controller.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.springframework.boot.cloud.CloudPlatform;
 import org.springframework.stereotype.Controller;
@@ -61,10 +62,10 @@ public class BookController implements BookOperation {
     return bookMap;
   }
 
-  //sir
-  public HashMap<String, List<Book>> getBookMap2() {
+  
+  public Map<String, List<Book>> getBookMap2() {
 
-    HashMap<String, List<Book>> bookMap = new HashMap<>();
+    Map<String, List<Book>> bookMap = new HashMap<>();
     bookMap.put("John", List.of(new Book(1, 10.3, null), new Book(2, 99.3, null)));
     // bookMap.put("Peter", new Book(2, 20.3));
     // bookMap.put("May", new Book(3, 30.3));
@@ -83,8 +84,7 @@ public class BookController implements BookOperation {
     return Bag.builder() //
             .books(List.of(new Book(1, 10.3, List.of("abc", "ghj")), new Book(2, 99.3, List.of("abc", "ghj", "xyz")))) //
             .color(Color.RED) //
-            .build();
-            //sir
+            .build();            
   };
 
 
