@@ -7,7 +7,7 @@ public class Database {
 
 
   // Final array only, not final the element inside the array
-  private static String[] strings = new String[]{"abc","def","xyz" };
+  private static String[] strings = new String[]{"abc","def","xyz","ijk","Chikawa" };
   //delete "final"
 
   public static String getString(int index){

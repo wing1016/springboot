@@ -18,5 +18,8 @@ public interface DatabaseOperation {
     @GetMapping(value = "/database/string/list")
     String getStringList();
 
+    @GetMapping(value = "/database/string/size")
+    int getSize();
 
+    //sir version
 }  

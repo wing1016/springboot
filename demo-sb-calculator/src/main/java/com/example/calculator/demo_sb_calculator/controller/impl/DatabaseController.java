@@ -8,15 +8,27 @@ import com.example.calculator.demo_sb_calculator.controller.DatabaseOperation;
 import com.example.calculator.demo_sb_calculator.model.Database;
 import com.example.calculator.demo_sb_calculator.service.DatabaseService;
 
+
+//Normally, controller layer autoweird service layer
+//Service.java have no Autowired
+
+
 @Controller
 @Component // this is no need
 @ResponseBody
 public class DatabaseController implements DatabaseOperation {
 
-  @Autowired
+  @Autowired  //Spring will find @Service in whole project during system startup
   private DatabaseService databaseService;
 
   // Task get all strings from the array
+
+
+  //sir version
+  @Override
+  public int getSize(){
+    return databaseService.getSize();
+  }
 
   @Override
   public String getString(int index) {
