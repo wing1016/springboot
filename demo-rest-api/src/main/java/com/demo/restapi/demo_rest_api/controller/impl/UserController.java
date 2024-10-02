@@ -1,7 +1,6 @@
 package com.demo.restapi.demo_rest_api.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.web.bind.annotation.RestController;
 import com.demo.restapi.demo_rest_api.controller.UserOperation;
 import com.demo.restapi.demo_rest_api.model.User;
@@ -16,6 +15,5 @@ public class UserController implements UserOperation{
   @Override
   public User[] getUsers() {
     return userService.getUsers();
-  }
-  
+  }  
 }

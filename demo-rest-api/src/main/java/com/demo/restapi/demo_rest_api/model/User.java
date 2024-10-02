@@ -2,9 +2,14 @@ package com.demo.restapi.demo_rest_api.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+// This class is for Deserialzation only ( Json -> java obj ) only.
+// So, Setter is not need here
 
 @Getter
-@Setter
+@Setter // setter not used here but i also add.
+@ToString
 public class User {
 
   private Integer id;
@@ -18,6 +23,7 @@ public class User {
 
   @Getter
   @Setter
+  @ToString
   public static class Address {
     public String street;
     public String suite;
@@ -26,6 +32,7 @@ public class User {
     public Geo geo;
     @Getter
     @Setter
+    @ToString
     public static class Geo {
       public String lat;
       public String lng;
@@ -34,6 +41,7 @@ public class User {
 
   @Getter
   @Setter
+  @ToString
   public static class Company {
     public String name;
     public String catchPhrase;

@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+api:
+  url:
+    domain: "jsonplaceholder.typicode.com"
+    endpoint: "/users"
+
+spring:
+  datasource:
+    # Mysql
+    driverClassName: "com.mysql.jdbc.Driver"
+    url: "jdbc:mysql://localhost:3306/bc2405p_db"
+    username: "root"
+    password: "admin1234"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create # update
+
+
+
+# spring:
+#   datasource:
+#     # Postgresql
+#     # driverClassName: "org.postgresql.Driver"
+#     # url: "jdbc:postgresql://localhost:5432/bc2405p_db"
+#     driverClassName: "com.mysql.jdbc.Driver"
+#     url: "jdbc:mysql://localhost:3306/bc2405p_db"
+#     username: "root"
+#     password: "admin1234"
+#   jpa:
+#       properties:
+#         hibernate:
+#           dialect: "org.hibernate.dialect.MySQL8Dialect"
+          
+#spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.MySQL8Dialect"
+
