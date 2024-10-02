@@ -7,37 +7,37 @@ import lombok.Setter;
 @Setter
 public class User {
 
-  int id;
-  String name;
-  String username;
-  String email;
-  Address address;
-  String phone;
-  String website;
-  Company company;
+  private Integer id;
+  private String name;
+  private String username;
+  private String email;
+  private Address address;
+  private String phone;
+  private String website;
+  private Company company;
 
   @Getter
   @Setter
-  static class Address {
-    String street;
-    String suite;
-    String city;
-    String zipcode;
-    Geo geo;
+  public static class Address {
+    public String street;
+    public String suite;
+    public String city;
+    public String zipcode;
+    public Geo geo;
     @Getter
     @Setter
-    static class Geo {
-      String lat;
-      String lng;
+    public static class Geo {
+      public String lat;
+      public String lng;
     }
   }
 
   @Getter
   @Setter
-  static class Company {
-    String name;
-    String catchPhrase;
-    String bs;
+  public static class Company {
+    public String name;
+    public String catchPhrase;
+    public String bs;
   }
 }
 
