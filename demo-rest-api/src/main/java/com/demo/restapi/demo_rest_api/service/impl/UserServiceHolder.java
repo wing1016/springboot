@@ -46,7 +46,7 @@ public class UserServiceHolder implements UserService {
   public User[] getUsers() {
 
     // We received a User Array from jsonplaceholder.com
-    // sir
+    // getForObject(): call API + serialize result and convert to User[]
     String url = UrlManager.builder().scheme(Scheme.HTTPS).domain(this.domain)
         .endpoint(this.endpoint).build().toString();  
 
