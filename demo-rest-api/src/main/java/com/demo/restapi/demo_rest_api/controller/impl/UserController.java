@@ -1,6 +1,7 @@
 package com.demo.restapi.demo_rest_api.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.demo.restapi.demo_rest_api.controller.UserOperation;
 import com.demo.restapi.demo_rest_api.model.User;
@@ -16,4 +17,9 @@ public class UserController implements UserOperation{
   public User[] getUsers() {
     return userService.getUsers();
   }  
+
+  @Override
+  public User getUser(@RequestParam Integer id) {
+    return userService.getUser(id);  
+  }
 }

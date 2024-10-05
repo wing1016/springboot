@@ -5,6 +5,7 @@ api:
   url:
     domain: "jsonplaceholder.typicode.com"
     endpoint: "/users"
+    endpoint2: "/posts"
 
 spring:
   datasource:
@@ -16,7 +17,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create # update
+      ddl-auto: update # update create
 
 
 

@@ -4,4 +4,6 @@ import com.demo.restapi.demo_rest_api.model.User;
 
 public interface UserService {
     User[] getUsers();
+
+    User getUser(Integer id);
 }
