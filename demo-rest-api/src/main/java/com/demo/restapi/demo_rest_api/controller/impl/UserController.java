@@ -19,7 +19,7 @@ public class UserController implements UserOperation{
   }  
 
   @Override
-  public User getUser(@RequestParam Integer id) {
-    return userService.getUser(id);  
+  public User getUserById(@RequestParam Integer id) {
+    return userService.getUserById(id);  
   }
 }

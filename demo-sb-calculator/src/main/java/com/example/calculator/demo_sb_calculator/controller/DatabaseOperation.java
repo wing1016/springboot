@@ -22,6 +22,6 @@ public interface DatabaseOperation {
     @GetMapping(value = "/database/string/size")
     int getSize();
 
-    s@GetMapping(value = "/database/strings")
-    public List<String> getStrings();
+    // @GetMapping(value = "/database/strings")
+    // public List<String> getStrings();
 }  

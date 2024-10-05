@@ -4,8 +4,6 @@ import org.springframework.stereotype.Component;
 import com.demo.restapi.demo_rest_api.entity.UserEntity;
 import com.demo.restapi.demo_rest_api.model.User;
 
-import lombok.Builder;
-
 @Component
 public class UserMapper {
 

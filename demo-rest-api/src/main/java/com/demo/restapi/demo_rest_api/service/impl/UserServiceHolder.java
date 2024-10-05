@@ -48,7 +48,7 @@ public class UserServiceHolder implements UserService {
   // }
 
   @Override
-  public User getUser(Integer id) {
+  public User getUserById(Integer id) {
     User us = new User();
     String url = UrlManager.builder().scheme(Scheme.HTTPS).domain(this.domain)
     .endpoint(this.endpoint).build().toString();

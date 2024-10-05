@@ -1,6 +1,7 @@
 package com.demo.restapi.demo_rest_api.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.demo.restapi.demo_rest_api.model.User;
 import com.demo.restapi.demo_rest_api.service.PostService;
@@ -17,4 +18,9 @@ public class PostController implements PostOperation{
   public Post[] getPosts() {
     return postService.getPosts();
   }  
+
+  @Override
+  public Post getPostById(@PathVariable Long id){
+    return postService.getPostById(id);
+  };
 }

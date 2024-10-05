@@ -11,7 +11,7 @@ public interface UserOperation {
   User[] getUsers();
   
   @GetMapping(value = "/user")
-  public User getUser(@RequestParam Integer id);  
+  public User getUserById(@RequestParam Integer id);  
 
 
   //@PostMapping      //create from zero to a new record
