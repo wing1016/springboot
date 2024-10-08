@@ -1,13 +1,19 @@
 package com.demo.restapi.demo_rest_api.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter // setter not used here but i also add.
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Post {
 
     private Long id;

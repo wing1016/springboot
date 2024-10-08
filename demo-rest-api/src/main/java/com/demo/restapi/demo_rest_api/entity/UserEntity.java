@@ -1,5 +1,6 @@
 package com.demo.restapi.demo_rest_api.entity;
 
+import com.demo.restapi.demo_rest_api.model.User.Company;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,18 +25,11 @@ public class UserEntity {
   @Id //Primary key
   @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto-increment
   private Long id; 
-
   private String name;
-
   private String username;
-
   @Column(name = "useremail") //to custum coloumn name 
   private String email;
-
   private String phone;
-
   private String website;
-
-
-
+  // private Company company;
 }

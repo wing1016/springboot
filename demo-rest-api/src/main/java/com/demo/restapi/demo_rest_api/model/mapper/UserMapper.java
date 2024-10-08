@@ -16,5 +16,16 @@ public class UserMapper {
     .website(user.getWebsite())
     .build(); //
   }
+
+  public User map(UserEntity userEntity) {
+    return User.builder()//
+        .name(userEntity.getName())//
+        .username(userEntity.getUsername())//
+        .email(userEntity.getEmail())//
+        .phone(userEntity.getPhone())//
+        .website(userEntity.getWebsite())//
+       
+        .build();
+  }
   
 }

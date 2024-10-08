@@ -10,15 +10,19 @@ public class PostMapper {
 
   public PostEntity map(Post post){
 
-    System.err.println(post.getId());
-    System.err.println(post.getBody());
-
-
     return PostEntity.builder()
     .userId(post.getUserId())
     .id(post.getId())
     .title(post.getTitle())
     .body(post.getBody())
+    .build();
+  }
+
+  public Post map(PostEntity postEntity){
+    return Post.builder()
+    .userId(postEntity.getUserId()) //
+    .title(postEntity.getTitle()) //
+    .body(postEntity.getBody()) //
     .build();
   }
 

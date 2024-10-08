@@ -1,7 +1,7 @@
 package com.demo.restapi.demo_rest_api.service.impl;
 
 import java.util.Arrays;
-import org.apache.catalina.mapper.Mapper;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -95,6 +95,21 @@ public class UserServiceHolder implements UserService {
     // System.out.println(Arrays.toString(u));
     // return new RestTemplate().getForObject(url, User[].class);
 
+  }
+
+  @Override
+  public UserEntity createNewUser(String name, String email, String phone) {
+    return userRepository.save(UserEntity.builder()//
+    .name(name)//
+    .email(email)//
+    .phone(phone)//
+    .build());
+  }
+
+
+  //for reference / later user
+  private List<User> convertArrToList(User[] userArr){
+    return List.of(userArr);
   }
 }
 

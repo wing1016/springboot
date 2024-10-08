@@ -39,7 +39,6 @@ public class PostServiceHolder implements PostService {
 
     String url = UrlManager.builder().scheme(Scheme.HTTPS).domain(this.domain)
         .endpoint(this.endpoint).build().toString();
-
     PostDTO[] postDTO = this.restTemplate.getForObject(url, PostDTO[].class);
 
     // System.out.println(Arrays.toString(postDTO));
@@ -59,7 +58,6 @@ public class PostServiceHolder implements PostService {
         }
       }
     }
-
     return postList;
   }
 
@@ -81,7 +79,6 @@ public class PostServiceHolder implements PostService {
 
   @Override
   public Post[] getPosts() {
-
     String url = UrlManager.builder().scheme(Scheme.HTTPS).domain(this.domain)
         .endpoint(this.endpoint).build().toString();
 
@@ -99,5 +96,14 @@ public class PostServiceHolder implements PostService {
     // System.err.println(posts.length);
     // System.err.println(Arrays.toString(posts));
     return posts;
+  }
+
+  @Override
+  public PostEntity createNewPost(Long userId, String title, String body) {
+    System.err.println( "userId Service" + userId);
+    return postRepository.save(PostEntity.builder() //
+        .userId(userId) //
+        .title(title) //
+        .body(body).build());
   }
 }
