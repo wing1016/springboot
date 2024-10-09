@@ -15,6 +15,7 @@ import com.demo.restapi.demo_rest_api.model.PostDTO;
 import com.demo.restapi.demo_rest_api.model.mapper.PostMapper;
 import com.demo.restapi.demo_rest_api.repository.PostRepository;
 import com.demo.restapi.demo_rest_api.service.PostService;
+import com.demo.restapi.demo_rest_api.service.UserService;
 
 @Service
 public class PostServiceHolder implements PostService {
@@ -33,6 +34,9 @@ public class PostServiceHolder implements PostService {
 
   @Autowired
   private PostMapper postMapper;
+
+  @Autowired
+  private UserService userService;
 
   @Override
   public List<PostDTO> getPostsByUserId(Long userId, Long postId) {
@@ -100,7 +104,11 @@ public class PostServiceHolder implements PostService {
 
   @Override
   public PostEntity createNewPost(Long userId, String title, String body) {
-    System.err.println( "userId Service" + userId);
+    System.err.println("userId Service : " + userId);
+    Integer user = userService.getUserById(userId.intValue()).getId();
+    if (user == null) {
+      return null;
+    }
     return postRepository.save(PostEntity.builder() //
         .userId(userId) //
         .title(title) //

@@ -57,10 +57,10 @@ public class UserServiceHolder implements UserService {
     for (User user : users) {
       if (user.getId() == id) {
         us = user;
-        break;
-      }
+        return us;
+       }         
     }
-    return us;
+    return null;
   }
 
   @Override
@@ -105,7 +105,6 @@ public class UserServiceHolder implements UserService {
     .phone(phone)//
     .build());
   }
-
 
   //for reference / later user
   private List<User> convertArrToList(User[] userArr){

@@ -1,9 +1,11 @@
 package com.demo.restapi.demo_rest_api.entity;
 
+import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,9 +20,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PostEntity {
+public class PostEntity implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+
+  //  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mySeqGen")
+  //  @SequenceGenerator(name = "mySeqGen", sequenceName = "my_sequence_name", allocationSize = 100)
   @Id
-  //@GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private Long  userId;
   private String title;
