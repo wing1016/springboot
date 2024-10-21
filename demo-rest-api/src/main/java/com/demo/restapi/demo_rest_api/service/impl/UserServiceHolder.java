@@ -2,6 +2,7 @@ package com.demo.restapi.demo_rest_api.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,8 @@ import org.springframework.web.client.RestTemplate;
 import com.demo.restapi.demo_rest_api.bootcamp.Scheme;
 import com.demo.restapi.demo_rest_api.bootcamp.UrlManager;
 import com.demo.restapi.demo_rest_api.entity.UserEntity;
+import com.demo.restapi.demo_rest_api.exception.BusinessException;
+import com.demo.restapi.demo_rest_api.exception.ErrorCode;
 import com.demo.restapi.demo_rest_api.model.User;
 import com.demo.restapi.demo_rest_api.model.mapper.UserMapper;
 import com.demo.restapi.demo_rest_api.repository.UserRepository;
@@ -109,6 +112,19 @@ public class UserServiceHolder implements UserService {
   //for reference / later user
   private List<User> convertArrToList(User[] userArr){
     return List.of(userArr);
+  }
+
+   @Override
+  public Optional<UserEntity> getUsersFromDB(Long id) {
+    return this.userRepository.findById(id);
+  }
+
+  // Controller -> Service.deleteById
+  @Override
+  public void deleteById(Long id) {
+    if (!this.userRepository.existsById(id))
+      throw new BusinessException(ErrorCode.USER_ID_NOT_FOUND); // exception object
+    this.userRepository.deleteById(id);
   }
 }
 
