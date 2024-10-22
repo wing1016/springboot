@@ -27,7 +27,7 @@ public class UserEntity {
   private Long id; 
   private String name;
   private String username;
-  @Column(name = "useremail") //to custum coloumn name 
+  @Column(name = "user_email") //to custum coloumn name 
   private String email;
   private String phone;
   private String website;

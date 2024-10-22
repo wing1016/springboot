@@ -1,6 +1,5 @@
 package com.demo.restapi.demo_rest_api.controller;
 
-import java.util.List;
 // import org.hibernate.mapping.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +31,10 @@ public interface UserOperation {
 
   @DeleteMapping(value = "db/users/{id}")       // no verbs , not action, action decide by @deleteMapping
   void deleteUserFromDBById(@PathVariable Long id);
+
+  // @GetMapping(value = "/user")
+  // GeneralResponse<User> getUserByUsername(@RequestParam("username") String username);
+  // Controller Layer: Convert UserEntity -> User -> GeneralResponse<User>
 
   //@PostMapping      //create from zero to a new record
   //@PatchMapping     // update only 1 coloumn, 1 field
