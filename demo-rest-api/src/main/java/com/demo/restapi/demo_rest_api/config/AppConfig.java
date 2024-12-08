@@ -11,7 +11,7 @@ public class AppConfig {
   @Bean
   RestTemplate restTemplate(){
 
-    //create RestTemplate Bean to the Spring Context
+    //create RestTemplate Bean to the Spring Context  
     return new RestTemplate();
   }
   

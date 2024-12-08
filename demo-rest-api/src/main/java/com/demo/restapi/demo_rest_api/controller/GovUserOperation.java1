@@ -1,0 +1,13 @@
+package com.demo.restapi.demo_rest_api.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.bootcamp.demo.demo_restapi.dto.GovUserDto;
+import com.bootcamp.demo.demo_restapi.util.GeneralResponse;
+
+public interface GovUserOperation {
+
+  @GetMapping(value = "/gov/db/user/{id}")
+  GeneralResponse<GovUserDto> getUserFromDBById(@PathVariable Long id);
+
+}

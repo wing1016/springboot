@@ -16,7 +16,7 @@ public class HelloworldController {
   
   @GetMapping(value = "/hello")
   public String greeting(){
-    return "Hello";
+    return "Hello bootcamp";
   }
 
   @GetMapping(value = "/bye")
